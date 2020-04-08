@@ -1,22 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-// import { createStore } from 'redux';
-// import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BaseLayout from './components/layout/BaseLayout';
 import ProjectManagement from './components/projectManagement/ProjectManagement'
 import './components/projectManagement/styles.css'
+//Installing Redux
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+//***Note: this will not work yet, because we don't have a reducer */
+let store = createStore(* placeHolderForReducer *, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
 
 ReactDOM.render(
-  <BrowserRouter>
-    <BaseLayout>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/projectmanagement" component={ProjectManagement} />
-      </Switch>
-    </BaseLayout>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <BaseLayout>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/projectmanagement" component={ProjectManagement} />
+        </Switch>
+      </BaseLayout>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );

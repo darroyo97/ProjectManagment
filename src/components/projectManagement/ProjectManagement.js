@@ -3,6 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 import Project from './Project';
 import AddProject from './AddProject';
 import './styles.css';
+//imported these into step 5
+import { connect } from 'react-redux';
+import addProject from '../../actions/addProject';
+import deleteProject from '../../actions/deleteProject';
 
 class ProjectManagement extends Component {
     constructor(props) {
@@ -78,4 +82,20 @@ class ProjectManagement extends Component {
     }
 }
 
-export default ProjectManagement
+let mapStateToProps = (state) => {
+    return {
+        proj: state.projects
+    }
+
+}
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+
+        onAddProject: (project) => dispatch(addProject(project)),
+        onDeleteProject: (id) => dispatch(deleteProject(id))
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectManagement)

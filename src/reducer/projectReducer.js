@@ -1,5 +1,6 @@
 let projectReducer = (state, action) => {
 
+
     if (state === undefined) {
         state = {
             projects: [

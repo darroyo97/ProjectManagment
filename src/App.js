@@ -4,10 +4,10 @@ import React, {
 
 class App extends Component {
   render() {
-    return ( <
-      >
-      Hello World <
-      />
+    return (
+      <>
+        Hello World
+      </>
     )
   }
 }

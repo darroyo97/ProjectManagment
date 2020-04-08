@@ -47,7 +47,6 @@ class AddProject extends React.Component {
                         </Form.Group>
                     </div>
 
-
                     <div>
 
                         <Form>

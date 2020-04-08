@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Project from './Project';
 import AddProject from './AddProject';
-import './styles.css'
+import './styles.css';
 
 class ProjectManagement extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class ProjectManagement extends Component {
 
     handleAddProject = (newProject) => {
 
-        let oldProjects = this.state.projects;
+        let oldProjects = [...this.state.projects];
         oldProjects.push(newProject);
 
         this.setState({
@@ -50,7 +50,7 @@ class ProjectManagement extends Component {
 
     handleDeleteProject = (id) => {
 
-        let oldProjects = this.state.projects;
+        let oldProjects = [...this.state.projects];
 
         let index = oldProjects.findIndex(pObj => pObj.id === id)
 

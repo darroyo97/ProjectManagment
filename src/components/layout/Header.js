@@ -1,13 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 
-class Header extends Component {
-  render() {
-    return (
-      <>
-        This is Header
-      </>
-    )
-  }
+const Header = (props) => {
+  return (
+    <>
+      <nav>
+        <div className="nav-wrapper">
+          <a href="#" className="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/projectmanagment">Project Management</Link></li>
+
+          </ul>
+        </div>
+      </nav>
+    </>
+  )
 }
 
 export default Header

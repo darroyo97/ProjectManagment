@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer'
 
-class BaseLayout extends Component {
-    render() {
-        return (
-            <>
-                <Header />
-                {props.children}
-                <Footer />
-            </>
-        )
-    }
+const BaseLayout = (props) => {
+    return (
+        <>
+            <Header />
+            {props.children}
+
+            <br /><br />
+            <Footer />
+        </>
+    )
 }
 
 export default BaseLayout
